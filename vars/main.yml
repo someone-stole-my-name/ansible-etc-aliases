@@ -1,0 +1,15 @@
+etc_aliases_special:
+  enabled: true
+  values:
+    mailer-daemon: postmaster
+    postmaster: root
+    nobody: root
+    hostmaster: root
+    usenet: root
+    news: root
+    webmaster: root
+    www: root
+    ftp: root
+    abuse: root
+    noc: root
+    security: root

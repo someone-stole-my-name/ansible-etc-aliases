@@ -1,0 +1,16 @@
+- name: Copy /etc/aliases file
+  copy:
+    owner: root
+    group: root
+    mode: "0644"
+    dest: /etc/aliases
+    content: |
+      # /etc/aliases
+      {% set aliases = {} %}
+      {% if etc_aliases_special.enabled %}
+      {% do aliases.update(etc_aliases_special['values']) %}
+      {% endif %}
+      {% do aliases.update(etc_aliases) %}
+      {% for key, value in aliases.items() %}
+      {{ key }}: {{ value }} 
+      {% endfor %}
